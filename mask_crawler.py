@@ -19,9 +19,8 @@ if __name__ == '__main__':
         req = requests.get(mask_site)
         html = req.text
         soup = BeautifulSoup(html, 'html.parser')
-        posts = soup.find_all("div", {"class": "relative w-full border-r border-gray-400 border-l-0 border-t border-b bg-white rounded-b-none rounded-r p-4 flex flex-col justify-between leading-normal"} )
         candidates = []
-        for post, p in zip(soup.find_all("div", {"class": "relative w-full border-r border-gray-400 border-l-0 border-t border-b bg-white rounded-b-none rounded-r p-4 flex flex-col justify-between leading-normal"}), soup.find_all("p", {"class":"text-gray-900 leading-none mb-2"})):
+        for post, p in zip(soup.find_all("div", {"class": "relative w-full border-r border-gray-400 border-l-0 border-t border-b bg-white rounded-b-none rounded-r p-4 flex flex-col justify-between leading-normal"}), soup.find_all("p", {"class":"text-gray-700 text-sm lg:text-base mb-1 lg:mb-4"})):
             #print(post.a.attrs["href"], post.div.text, p.text.strip())
             candidate_name = post.div.text
             candidates.append(candidate_name)
@@ -36,6 +35,7 @@ if __name__ == '__main__':
                 latest_names.append(candidate_name)
                 text= '[new mask]\n' + candidate_name + '\n' + candidate_date + '\n' + candidate_link
                 bot.sendMessage(chat_id, text)
+                print(text)
         for name in latest_names:
         	if name in candidates:
         		continue
