@@ -13,9 +13,8 @@ my_token = token
 bot = telegram.Bot(token=my_token)
 chat_id = bot.getUpdates()[-1].message.chat.id 
 
-notice_site = 'https://smartstore.naver.com/mfbshop/notice/content/2001264804?parameter=%7B%22currentPageLayout%22%3A%22LAYOUT5%22%2C%22type%22%3A%22%22%2C%22typeSelect%22%3A%22%EC%A0%84%EC%B2%B4%22%2C%22noticeKeyword%22%3A%22%22%2C%22page.page%22%3A1%2C%22page.size%22%3A15%7D'
-mask_site = 'https://smartstore.naver.com/mfbshop'
-
+notice_site = ''
+mask_site = ''
 if __name__ == '__main__':
     latest_notice = ''
     
