@@ -13,8 +13,7 @@ my_token = token
 bot = telegram.Bot(token=my_token)
 chat_id = bot.getUpdates()[-1].message.chat.id 
 
-mask_site = 'https://smartstore.naver.com/gonggami/products/4705579501'
-mask_site = 'https://smartstore.naver.com/aer-shop/products/4792484420'
+mask_site =''
 if __name__ == '__main__':
     latest_notice = ''
     
